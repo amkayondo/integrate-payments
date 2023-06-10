@@ -5,8 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="https://checkout.flutterwave.com/v3.js"></script>
+    <script>
+     function makePayment() {
+    FlutterwaveCheckout({
+      public_key: "FLWPUBK_TEST-3832f5544-X",
+      tx_ref: "jskampala-48981487343MDI0NzMx",
+      amount: 500,
+      currency: "UGX",
+      payment_options: "card, banktransfer, ussd, mobilemoney",
+      redirect_url: "https://5500-amkayondo-integratepaym-sf8f044lzil.ws-eu99.gitpod.io/others/paid.html",
+     
+      customer: {
+        email: "rose@unsinkableship.com",
+        phone_number: "08102909304",
+        name: "first customer",
+      },
+      customizations: {
+        title: "tv product",
+        description: "Payment for an awesome cruise",
+        logo: "https://www.logolynx.com/images/logolynx/22/2239ca38f5505fbfce7e55bbc0604386.jpeg",
+      },
+    });
+  }
+      </script>
   </head>
   <body>
-    <button>Pay</button>
+    <button onclick="makePayment()">Pay</button>
   </body>
 </html>
